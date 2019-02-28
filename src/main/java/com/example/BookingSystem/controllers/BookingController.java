@@ -21,7 +21,6 @@ public class BookingController {
 
 @GetMapping(value="bookings/{date}")
     public List<Booking> getBookingsByDate(@PathVariable String date){
-
     return bookingRepository.findBookingsByDate(date);
 }
 

@@ -51,4 +51,10 @@ public class BookingSystemApplicationTests {
 		assertEquals(2, found.size());
 	}
 
+	@Test
+	public void canGetCourseByCustomer(){
+		List<Course> found = customerRepository.getAllCoursesFromCustomer(1L);
+		assertEquals(2, found.size());
+	}
+
 }
