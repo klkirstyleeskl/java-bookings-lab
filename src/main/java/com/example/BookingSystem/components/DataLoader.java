@@ -1,5 +1,6 @@
 package com.example.BookingSystem.components;
 
+import com.example.BookingSystem.models.Booking;
 import com.example.BookingSystem.models.Course;
 import com.example.BookingSystem.models.Customer;
 import com.example.BookingSystem.repositories.BookingRepository;
@@ -35,6 +36,10 @@ public class DataLoader implements ApplicationRunner {
 
         Course course1 = new Course("Hula Dancing", "Brighton", 5, customer1);
         courseRepository.save(course1);
+
+
+        Booking booking1 = new Booking("05-07-2019", customer1);
+        bookingRepository.save(booking1);
 
     }
 

@@ -23,25 +23,25 @@ public class Customer {
     private int age;
 
     @OneToMany(mappedBy = "customer")
-    private List<Course> courses;
+    private List<Booking> bookings;
 
     public Customer(String customerName, String customerTown, int age){
         this.customerName = customerName;
         this.customerTown = customerTown;
         this.age = age;
-        this.courses = new ArrayList<>();
+        this.bookings = new ArrayList<>();
     }
 
     public Customer(){
 
     }
 
-    public List<Course> getCourses() {
-        return courses;
+    public List<Booking> getBookings() {
+        return bookings;
     }
 
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public Long getId() {
