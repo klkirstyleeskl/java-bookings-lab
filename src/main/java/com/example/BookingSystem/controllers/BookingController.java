@@ -19,7 +19,7 @@ public class BookingController {
 @Autowired
     BookingRepository bookingRepository;
 
-@GetMapping(value="bookings/{date}")
+@GetMapping(value= "/date/{date}")
     public List<Booking> getBookingsByDate(@PathVariable String date){
     return bookingRepository.findBookingsByDate(date);
 }
