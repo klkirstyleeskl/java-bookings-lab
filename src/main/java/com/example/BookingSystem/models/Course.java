@@ -1,6 +1,8 @@
 package com.example.BookingSystem.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "courses")
@@ -25,15 +27,28 @@ public class Course {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
+    @OneToMany(mappedBy = "course")
+    private List<Booking> bookings;
+
+
     public Course(String courseName, String town, int rating, Customer customer){
         this.courseName = courseName;
         this.town = town;
         this.rating = rating;
         this.customer = customer;
+        this.bookings = new ArrayList<>();
     }
 
     public Course(){
 
+    }
+
+    public List<Booking> getBookings() {
+        return bookings;
+    }
+
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     public Customer getCustomer() {
