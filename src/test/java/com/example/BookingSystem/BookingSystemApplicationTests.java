@@ -39,16 +39,16 @@ public class BookingSystemApplicationTests {
 		assertEquals(1, found.size());
 	}
 
-//	@Test
-//	public void canGetCustomerByCourse(){
-//		List<Customer> found = customerRepository.getAllCustomersFromCourse(1L);
-//		assertEquals(1, found.size());
-//	}
+	@Test
+	public void canGetCustomerByCourse(){
+		List<Customer> found = courseRepository.getAllCustomersFromCourse(1L);
+		assertEquals(2, found.size());
+	}
 
 	@Test
 	public void canGetBookingByDate(){
 		List<Booking> found = bookingRepository.findBookingsByDate("05-07-2019");
-		assertEquals(1, found.size());
+		assertEquals(2, found.size());
 	}
 
 }

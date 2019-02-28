@@ -17,24 +17,7 @@ public class CustomerRepositoryImpl implements CustomerRepositoryCustom {
     EntityManager entityManager;
 
 
-    @Transactional
-    public List<Customer> getAllCustomersFromCourse(Long courseId){
-        List<Customer> results = null;
-        Session session = entityManager.unwrap(Session.class);
-        try {
-            Criteria cr = session.createCriteria(Customer.class);
-            cr.createAlias("booking", "bookingAlias");
-                    cr.add(Restrictions.eq("bookingAlias.course_id", courseId));
 
-                    results = cr.list();
-
-        }
-        catch (HibernateException ex){
-            ex.printStackTrace();
-        }
-        return results;
-
-    }
 
 
 }
